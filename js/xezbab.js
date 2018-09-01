@@ -117,7 +117,7 @@ let canvas = document.getElementById('canvas');
 if(canvas === null) {
     canvas = document.createElement('canvas');
     canvas.id = 'canvas';
-    document.body.appendChild(canvas);
+    document.getElementsByTagName("body")[0].appendChild(canvas);
 }
 let ctx = canvas.getContext('2d');
 let _anim, _lastCanvasTime, canvasFrameRate, frameCount, width, height, width_half, height_half, width_quarter, height_quarter;
@@ -163,7 +163,7 @@ window.addEventListener('load', () => {
         'canvasOptions' in window ? window.canvasOptions : {}
     );
     if(_canvasOptions.canvas === false) {
-        document.body.removeChild(canvas);
+        document.getElementsByTagName("body")[0].removeChild(canvas);
     }
     _resizeCanvas();
     if('setup' in window) {
